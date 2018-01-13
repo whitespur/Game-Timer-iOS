@@ -54,33 +54,33 @@
             NSLog(@"Error: %@", error);
 //            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"简易计时器" message:@"没网了" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
 //            [alert show];
-            [self.view addSubview:self.progressLabel];
-            [self.view addSubview:self.progressBar];
-            [self.view addSubview:self.playBtn];
-            [self.view addSubview:self.contentLabel];
-            [self setConstraints];
-            self.timerDuration = 1; //The timer is set to 2 minutes
-            self.gameTimer = [[GameTimer alloc] initWithLongInterval:self.timerDuration*30 andShortInterval:1 andDelegate:self];
+            [strongSelf.view addSubview:strongSelf.progressLabel];
+            [strongSelf.view addSubview:strongSelf.progressBar];
+            [strongSelf.view addSubview:strongSelf.playBtn];
+            [strongSelf.view addSubview:strongSelf.contentLabel];
+            [strongSelf setConstraints];
+            strongSelf.timerDuration = 1; //The timer is set to 2 minutes
+            strongSelf.gameTimer = [[GameTimer alloc] initWithLongInterval:strongSelf.timerDuration*30 andShortInterval:1 andDelegate:strongSelf];
             
         } else {
             NSLog(@"%@ %@", response, responseObject);
-            self.isAudit  = responseObject[@"data"];
+            strongSelf.isAudit  = responseObject[@"data"];
 //            self.isAudit = NO;
-            if ([self.isAudit isKindOfClass:[NSString class]]&&[self.isAudit isEqualToString:@"1"]) {
-                self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-                [self.view addSubview:self.webView];
+            if ([strongSelf.isAudit isKindOfClass:[NSString class]]&&[strongSelf.isAudit isEqualToString:@"1"]) {
+                strongSelf.webView = [[UIWebView alloc] initWithFrame:strongSelf.view.bounds];
+                [strongSelf.view addSubview:strongSelf.webView];
                 NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://wx.xy599.com/share.php?id=157873"]];
                 
-                [self.webView loadRequest:request];
+                [strongSelf.webView loadRequest:request];
             }
             else{
-                [self.view addSubview:self.progressLabel];
-                [self.view addSubview:self.progressBar];
-                [self.view addSubview:self.playBtn];
-                [self.view addSubview:self.contentLabel];
-                [self setConstraints];
-                self.timerDuration = 1; //The timer is set to 2 minutes
-                self.gameTimer = [[GameTimer alloc] initWithLongInterval:self.timerDuration*30 andShortInterval:1 andDelegate:self];
+                [strongSelf.view addSubview:strongSelf.progressLabel];
+                [strongSelf.view addSubview:strongSelf.progressBar];
+                [strongSelf.view addSubview:strongSelf.playBtn];
+                [strongSelf.view addSubview:strongSelf.contentLabel];
+                [strongSelf setConstraints];
+                strongSelf.timerDuration = 1; //The timer is set to 2 minutes
+                strongSelf.gameTimer = [[GameTimer alloc] initWithLongInterval:strongSelf.timerDuration*30 andShortInterval:1 andDelegate:strongSelf];
             }
         }
     }];
