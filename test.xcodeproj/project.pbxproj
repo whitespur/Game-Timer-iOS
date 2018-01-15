@@ -588,9 +588,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codery.xiaoyuzhuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "37c87f68-0bed-46ea-9050-84c7ff90ffc6";
+				PROVISIONING_PROFILE = "c9f8abed-cbf5-44ad-b706-44e537cfc52a";
 				PROVISIONING_PROFILE_SPECIFIER = "adhoc-xiaoyu";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -608,7 +608,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "aa85c89e-a53f-4d88-8469-91bdcc4016fa";
 				PROVISIONING_PROFILE_SPECIFIER = xiaoyuzhuanqian;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
